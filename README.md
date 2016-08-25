@@ -1,1 +1,1 @@
-# sandbox-dev-django
+# Django-SQL-sample
