@@ -12,8 +12,10 @@ def entry():
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "sql_sample.settings")
     django.setup()
     
-    from script import get
-    get.get_test()
+    from script import get, create, delete
+    delete.truncate()
+    create.initial_data()
+    get.get_all_data()
     
 if __name__ == '__main__':
     print("\n========= start =========")
