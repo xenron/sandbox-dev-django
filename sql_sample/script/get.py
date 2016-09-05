@@ -13,7 +13,7 @@ def get_data_by_pk(pk_val):
     if not pk_val:
         pk_val = 1
     blog = Blog.objects.get(pk=pk_val)
-    print(blog)
+    print(blog.name, blog.tagline)
 
 
 def get_data_by_filter_self_column(col_val):
