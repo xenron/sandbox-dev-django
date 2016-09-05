@@ -1,6 +1,7 @@
 from apps.models.blog import Blog
 import util
 
+
 def get_all_data():
     blog = Blog.objects.all()
     # util.print_all_field(blog)
@@ -16,7 +17,7 @@ def get_data_by_pk(pk_val):
     print(blog.name, blog.tagline)
 
 
-def get_data_by_filter_self_column(col_val):
+def get_data_by_self_column(col_val):
     # if not name or not val:
     #     name = "tagline"
     #     val = "taga"
@@ -24,9 +25,10 @@ def get_data_by_filter_self_column(col_val):
     print(blog.name, blog.tagline)
 
 
-def get_data_by_filter_self_variable_column(col_name, col_val):
+def get_data_by_self_variable_column(col_name, col_val):
     # if not name or not val:
     #     name = "tagline"
     #     val = "taga"
     blog = Blog.objects.get(**{col_name: col_val})
     print(blog.name, blog.tagline)
+
