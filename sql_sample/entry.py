@@ -16,6 +16,9 @@ def entry():
     delete.truncate()
     create.initial_data()
     get.get_all_data()
+    # get.get_data_by_pk()
+    get.get_data_by_filter_self_column("taga")
+    get.get_data_by_filter_self_variable_column("tagline", "taga")
     
 if __name__ == '__main__':
     print("\n========= start =========")
