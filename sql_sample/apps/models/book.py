@@ -1,10 +1,10 @@
 from django.db import models
 
-class Author(models.Model):
+class BookAuthor(models.Model):
     name = models.CharField(max_length=100)
     age = models.IntegerField()
 
-class Publisher(models.Model):
+class BookPublisher(models.Model):
     name = models.CharField(max_length=300)
     num_awards = models.IntegerField()
 
@@ -14,12 +14,12 @@ class Book(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     discount_price = models.DecimalField(max_digits=10, decimal_places=2)
     rating = models.FloatField()
-    authors = models.ManyToManyField(Author)
-    publisher = models.ForeignKey(Publisher)
+    authors = models.ManyToManyField(BookAuthor)
+    publisher = models.ForeignKey(BookPublisher)
     publish_date = models.DateField()
     print_date = models.DateField()
 
-class Store(models.Model):
+class BookStore(models.Model):
     name = models.CharField(max_length=300)
     registered_users = models.PositiveIntegerField()
     hoge = models.CharField(max_length=100, default='fuga')
@@ -27,37 +27,37 @@ class Store(models.Model):
     class Meta:
         db_table = 'store'
 
-class CascadeKey(models.Model):
+class BookCascadeKey(models.Model):
     name = models.CharField(max_length=100)
 
-class ProtectKey(models.Model):
+class BookProtectKey(models.Model):
     name = models.CharField(max_length=100)
 
-class SetNullKey(models.Model):
+class BookSetNullKey(models.Model):
     name = models.CharField(max_length=100)
 
-class SetDefaultKey(models.Model):
+class BookSetDefaultKey(models.Model):
     name = models.CharField(max_length=100)
 
-class SetKey(models.Model):
+class BookSetKey(models.Model):
     name = models.CharField(max_length=100)
 
-class DoNothingKey(models.Model):
+class BookDoNothingKey(models.Model):
     name = models.CharField(max_length=100)
 
-class Deletion(models.Model):
+class BookDeletion(models.Model):
     name = models.CharField(max_length=200)
-    cascade_row = models.ForeignKey(CascadeKey, on_delete=models.CASCADE)
-    protect_row = models.ForeignKey(ProtectKey, on_delete=models.PROTECT)
-    set_null_row = models.ForeignKey(SetNullKey,
+    cascade_row = models.ForeignKey(BookCascadeKey, on_delete=models.CASCADE)
+    protect_row = models.ForeignKey(BookProtectKey, on_delete=models.PROTECT)
+    set_null_row = models.ForeignKey(BookSetNullKey,
                                      null=True,
                                      on_delete=models.SET_NULL)
-    set_default_row = models.ForeignKey(SetDefaultKey,
+    set_default_row = models.ForeignKey(BookSetDefaultKey,
                                         default=9,
                                         on_delete=models.SET_DEFAULT)
-    set_key_row = models.ForeignKey(SetKey,
+    set_key_row = models.ForeignKey(BookSetKey,
                                     default=10,
                                     on_delete=models.SET(11))
-    do_nothing_row = models.ForeignKey(DoNothingKey, on_delete=models.DO_NOTHING)
+    do_nothing_row = models.ForeignKey(BookDoNothingKey, on_delete=models.DO_NOTHING)
 
 

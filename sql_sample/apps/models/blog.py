@@ -10,20 +10,20 @@ class Blog(models.Model):
     def __str__(self):              # __unicode__ on Python 2
         return self.name
 
-class Author(models.Model):
+class BlogAuthor(models.Model):
     name = models.CharField(max_length=200)
     email = models.EmailField()
 
     def __str__(self):              # __unicode__ on Python 2
         return self.name
 
-class Entry(models.Model):
+class BlogEntry(models.Model):
     blog = models.ForeignKey(Blog)
     headline = models.CharField(max_length=255)
     body_text = models.TextField()
     pub_date = models.DateField()
     mod_date = models.DateField()
-    authors = models.ManyToManyField(Author)
+    authors = models.ManyToManyField(BlogAuthor)
     n_comments = models.IntegerField()
     n_pingbacks = models.IntegerField()
     rating = models.IntegerField()

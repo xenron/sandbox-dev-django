@@ -1,5 +1,5 @@
 from apps.models.blog import Blog
-import util
+from . import util
 
 
 def get_all_data():

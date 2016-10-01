@@ -6,3 +6,9 @@ pip install -r requirements.txt
 pip install -r requirements-dev.txt
 pip install -r requirements-test.txt
 pip install -r requirements-travisci.txt
+
+python manage.py makemigrations
+python manage.py migrate
+
+
+

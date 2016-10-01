@@ -13,7 +13,7 @@ def entry():
     django.setup()
     
     from script import get_data, create, delete, filter, query_set
-    delete.truncate()
+    # delete.truncate()
     create.initial_data()
     
     print("\n========= get ========= ")

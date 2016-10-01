@@ -1,5 +1,5 @@
 from apps.models.blog import Blog
-import util
+from . import util
 
 
 def filter_data_by_filter_self_column(col_val):
