@@ -1,10 +1,20 @@
 [
 {
-  "fields": {
-    "username": "admin",
-    "password": "pbkdf2_sha256$15000$sDvLgitB2ieq$tGnZ4Vw+BVOnluucn0GyLzi1tV1dZEg=",
-  },
-  "model": "auth.user",
-  "pk": 1
-}
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "first_name": "",
+      "email": "admin@test.com",
+      "last_login": "2016-10-01T22:52:22.710Z",
+      "user_permissions": [],
+      "date_joined": "2016-10-01T22:52:11.890Z",
+      "is_active": true,
+      "username": "admin",
+      "last_name": "",
+      "is_superuser": true,
+      "password": "pbkdf2_sha256$20000$Nl3pDjAkpLXx$1aSZy/KeB6G7F5VOKQPz7DRjWN4Mi4EmnMP+ex3T9Lg=",
+      "groups": [],
+      "is_staff": true
+    }
+  }
 ]

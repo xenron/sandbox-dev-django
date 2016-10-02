@@ -47,3 +47,21 @@ python manage.py test --pattern="tests_*.py"
 # 启用warnings提醒：
 python -Wall manage.py test
 ```
+
+# LiveServerTestCase
+```
+# Changed in Django 1.9:
+# In earlier versions, the live server’s default address was always 'localhost:8081'.
+python manage.py test --liveserver=localhost:8081
+python manage.py test --liveserver=localhost:8082
+
+python manage.py test --liveserver=localhost:8082,8090-8100,9000-9200,7041
+
+python manage.py test apps.live_server_test.selenium.MySeleniumTests.test_login
+```
+
+# Coverage
+```
+coverage run --source='.' manage.py test apps
+coverage report
+```
