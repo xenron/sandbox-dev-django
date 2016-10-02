@@ -4,6 +4,7 @@ from django.contrib.auth import (
     get_user_model
 )
 from django.contrib.sessions.backends.db import SessionStore
+from selenium import webdriver
 
 
 def create_session_cookie(username, password, create_instance):
@@ -31,3 +32,10 @@ def create_session_cookie(username, password, create_instance):
         'path': '/',
     }
     return cookie
+
+
+def get_test_browser():
+    # browser = webdriver.PhantomJS()
+    browser = webdriver.Firefox()
+    # browser = webdriver.Chrome()
+    return browser
