@@ -2,7 +2,7 @@ from django.test import TestCase
 
 # Create your tests here.
 from django.test import TestCase
-from apps.models.blog import Blog
+from apps.sub_models.blog import Blog
 from django.contrib.auth.models import User
 
 
