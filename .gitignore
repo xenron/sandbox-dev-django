@@ -169,11 +169,14 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 
-migrations/*.py
-
+# SQLite
 db.sqlite3
 
 # migrations
+migrations/*.py
 [0-9][0-9][0-9][0-9]_initial.py
 
 .DS_Store
+
+# iPython
+.ipynb_checkpoints
