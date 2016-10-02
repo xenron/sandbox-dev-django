@@ -39,7 +39,7 @@ def get_test_browser():
     # set by Env PATH
     # browser = webdriver.PhantomJS()
     # set by executable file full path
-    # browser = webdriver.PhantomJS(executable_path=r'D:\backup\soft\phantomjs-2.1.1-windows\bin\phantomjs.exe')
+    # browser = webdriver.PhantomJS(executable_path=r'D:\soft\phantomjs-2.1.1-windows\bin\phantomjs.exe')
     browser = webdriver.Firefox()
     # browser = webdriver.Chrome()
     return browser
