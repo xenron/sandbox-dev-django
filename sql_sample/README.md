@@ -62,6 +62,12 @@ python manage.py test apps.live_server_test.selenium.MySeleniumTests.test_login
 
 # Coverage
 ```
+
+# Coverage
 coverage run --source='.' manage.py test apps
 coverage report
+
+# django_coverage
+python manager.py test_coverage
+
 ```

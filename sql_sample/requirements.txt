@@ -6,3 +6,5 @@ mock
 coverage
 django_selenium
 django_nose
+django-selenium-test-runner
+django_coverage

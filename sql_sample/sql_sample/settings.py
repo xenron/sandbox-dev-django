@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_coverage',
     'apps',
 ]
 
@@ -132,4 +133,5 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.DefaultStorageFinder'
 )
 
+COVERAGE_REPORT_HTML_OUTPUT_DIR = './django_coverage/'
 
