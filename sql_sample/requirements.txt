@@ -7,4 +7,5 @@ coverage
 django_selenium
 django_nose
 django-selenium-test-runner
+# only support python 2.x
 django_coverage
