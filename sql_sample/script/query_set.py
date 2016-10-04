@@ -1,4 +1,4 @@
-from apps.models.blog import Blog
+from myapp.models.blog import Blog
 from . import util
 
 

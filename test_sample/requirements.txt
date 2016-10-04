@@ -1,0 +1,8 @@
+# Django>=1.4.20
+Django<1.9
+psycopg2
+selenium
+mock
+coverage
+django_selenium
+django_nose

@@ -1,0 +1,7 @@
+# These requirements are necessary for working on the django-test-plus
+# project itself.  They are not necessary for running the tests or
+# using the library.
+-r requirements-travisci.txt
+
+pypandoc==0.9.7
+selenium

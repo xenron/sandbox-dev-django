@@ -1,4 +1,4 @@
-from apps.models.blog import Blog, BlogAuthor, BlogEntry
+from myapp.models.blog import Blog, BlogAuthor, BlogEntry
 
 def truncate():
     BlogEntry.objects.all().delete()

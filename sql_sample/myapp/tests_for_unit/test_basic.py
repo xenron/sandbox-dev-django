@@ -1,9 +1,8 @@
 from django.test import TestCase
-
-# Create your tests here.
 from django.test import TestCase
-from apps.sub_models.blog import Blog
 from django.contrib.auth.models import User
+
+from myapp.sub_models.blog import Blog
 
 
 class AnimalTestCase(TestCase):

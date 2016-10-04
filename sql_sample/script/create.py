@@ -1,4 +1,4 @@
-from apps.models import blog as blog_model
+from myapp.models import blog as blog_model
 
 def create_new_blog():
     pass

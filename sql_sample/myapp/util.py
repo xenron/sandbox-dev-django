@@ -4,6 +4,7 @@ from django.contrib.auth import (
     get_user_model
 )
 from django.contrib.sessions.backends.db import SessionStore
+
 from selenium import webdriver
 
 
