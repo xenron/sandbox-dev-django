@@ -65,3 +65,8 @@ python manage.py test apps.live_server_test.selenium.MySeleniumTests.test_login
 coverage run --source='.' manage.py test apps
 coverage report
 ```
+
+# Client
+```
+https://ftp.mozilla.org/pub/firefox/releases/30.0/win32/en-US/Firefox%20Setup%2030.0.exe
+```

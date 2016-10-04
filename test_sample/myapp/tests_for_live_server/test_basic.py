@@ -11,13 +11,13 @@ from selenium.webdriver.support import expected_conditions as EC
 from .. import util
 
 
-# class PollsTest(LiveServerTestCase):
-class PollsTest(StaticLiveServerTestCase):
+class PollsTest(LiveServerTestCase):
+# class PollsTest(StaticLiveServerTestCase):
 
     def setUp(self):
         self.browser = util.get_test_browser()
         self.browser.implicitly_wait(100)
-        self.browser.set_page_load_timeout(100)
+        # self.browser.set_page_load_timeout(100)
 
     def tearDown(self):
         self.browser.quit()
