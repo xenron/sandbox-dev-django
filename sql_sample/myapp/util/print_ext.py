@@ -1,13 +1,15 @@
+# coding: utf-8
+
 import json
 import pprint;
 
 def pretty(d, indent=0):
    for key, value in d.iteritems():
-      print '\t' * indent + str(key)
+      print('\t' * indent + str(key))
       if isinstance(value, dict):
          pretty(value, indent+1)
       else:
-         print '\t' * (indent+1) + str(value)
+         print('\t' * (indent+1) + str(value))
 
 def print_json(json_data):
     print(json.dumps(json_data))
