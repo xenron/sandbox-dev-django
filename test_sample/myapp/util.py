@@ -37,7 +37,7 @@ def create_session_cookie(username, password, create_instance):
     return cookie
 
 
-def get_test_browser(name):
+def get_test_browser(name=None):
     browser = None
     
     if not name or name == "ff":
