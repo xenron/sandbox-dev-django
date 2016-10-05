@@ -10,7 +10,7 @@ from .. import util
 
 
 class AdminLoginTest01(unittest.TestCase):
-    fixtures = ['user-data.json']
+    live_server_url = "http://localhost:80"
 
     def setUp(self):
         self.browser = util.get_test_browser()
@@ -35,7 +35,6 @@ class AdminLoginTest01(unittest.TestCase):
 
 
 class AdminLoginTest02(unittest.TestCase):
-    fixtures = ['user-data.json']
 
     def setUp(self):
         self.browser = util.get_test_browser()

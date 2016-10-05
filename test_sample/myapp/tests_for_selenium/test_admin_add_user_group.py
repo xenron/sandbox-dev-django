@@ -1,4 +1,5 @@
 import time
+import unittest
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -10,7 +11,7 @@ from .. import util
 
 
 class AdminAddUserGroup(unittest.TestCase):
-    fixtures = ['user-data.json']
+    live_server_url = "http://localhost:80"
 
     def setUp(self):
         self.browser = util.get_test_browser()
@@ -37,9 +38,6 @@ class AdminAddUserGroup(unittest.TestCase):
         element = WebDriverWait(self.browser, 10).until(
             EC.presence_of_element_located((By.CLASS_NAME, "addlink"))
         )
-        # String jQuerySelector = "'#myDiv input.test'";
-        # RenderedWebElement webElement = (RenderedWebElement) ((JavascriptExecutor) webDriver).executeScript("return $(" + jQuerySelector+ ").get(0);");
-        # wd.execute_script("return true")
         self.browser.find_element_by_class_name('addlink').click()
         element = WebDriverWait(self.browser, 10).until(
             EC.presence_of_element_located((By.NAME, "_save"))

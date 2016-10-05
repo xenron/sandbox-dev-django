@@ -1,6 +1,4 @@
-from django.test import LiveServerTestCase
-from django.contrib.staticfiles.testing import StaticLiveServerTestCase
-from django.contrib.staticfiles.testing import StaticLiveServerTestCase
+import unittest
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -12,7 +10,7 @@ from .. import util
 
 
 class PollsTest(unittest.TestCase):
-# class PollsTest(StaticLiveServerTestCase):
+    live_server_url = "http://localhost:80"
 
     def setUp(self):
         self.browser = util.get_test_browser()
