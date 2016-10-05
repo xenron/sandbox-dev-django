@@ -1,3 +1,5 @@
+import os
+
 from django.conf import settings
 from django.contrib.auth import (
     SESSION_KEY, BACKEND_SESSION_KEY, HASH_SESSION_KEY,
@@ -35,8 +37,21 @@ def create_session_cookie(username, password, create_instance):
     return cookie
 
 
-def get_test_browser():
-    # browser = webdriver.PhantomJS()
-    browser = webdriver.Firefox()
-    # browser = webdriver.Chrome()
+def get_test_browser(name):
+    browser = None
+    
+    if not name or name == "ff":
+        # Firefox
+        browser = webdriver.Firefox()
+    elif name == "p":
+        browser = webdriver.PhantomJS()
+    elif name == "ie":
+        # browser = webdriver.IE()
+        pass
+    elif name == "ch":
+        # Chrome
+        chromedriver = "d:\\soft\\webdriver\\chromedriver.exe"
+        os.environ["webdriver.chrome.driver"] = chromedriver
+        browser = webdriver.Chrome(chromedriver)
+
     return browser
