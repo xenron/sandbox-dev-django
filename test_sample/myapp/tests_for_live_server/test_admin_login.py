@@ -7,7 +7,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.firefox.webdriver import WebDriver
 from selenium.webdriver.support import expected_conditions as EC
 
-
 from .. import util
 
 
@@ -21,7 +20,7 @@ class AdminLoginTest01(LiveServerTestCase):
     def tearDown(self):
         self.browser.quit()
 
-    def test_can_create_new_poll_via_admin_site(self):
+    def test_login_by_add_cookie(self):
         # Native django test client
         self.client.login(username='admin', password='123456')
         cookie = self.client.cookies['sessionid']
@@ -46,7 +45,7 @@ class AdminLoginTest02(LiveServerTestCase):
     def tearDown(self):
         self.browser.quit()
 
-    def test_can_create_new_poll_via_admin_site(self):
+    def test_login_by_input_click(self):
         # Native django test client
         self.browser.get(self.live_server_url + '/admin/')
         username_input = self.browser.find_element_by_name("username")
