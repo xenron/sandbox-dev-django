@@ -6,14 +6,14 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.firefox.webdriver import WebDriver
 from selenium.webdriver.support import expected_conditions as EC
 
-import util
+import selenium_util
 
 
 class PollsTest(unittest.TestCase):
-    live_server_url = "http://localhost:80"
+    server_url = "http://localhost:80"
 
     def setUp(self):
-        self.browser = util.get_test_browser()
+        self.browser = selenium_util.get_test_browser()
         self.browser.implicitly_wait(100)
         # self.browser.set_page_load_timeout(100)
 
@@ -22,7 +22,7 @@ class PollsTest(unittest.TestCase):
 
     def test_can_create_new_poll_via_admin_site(self):
         # Gertrude opens her web browser, and goes to the admin page
-        self.browser.get(self.live_server_url + '/admin/')
+        self.browser.get(self.server_url + '/admin/')
 
         # She sees the familiar 'Django administration' heading
         body = self.browser.find_element_by_tag_name('body')

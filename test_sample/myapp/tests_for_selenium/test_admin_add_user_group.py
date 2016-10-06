@@ -7,14 +7,14 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.firefox.webdriver import WebDriver
 from selenium.webdriver.support import expected_conditions as EC
 
-import util
+import selenium_util
 
 
 class AdminAddUserGroup(unittest.TestCase):
-    live_server_url = "http://localhost:80"
+    server_url = "http://localhost:80"
 
     def setUp(self):
-        self.browser = util.get_test_browser()
+        self.browser = selenium_util.get_test_browser()
         self.browser.implicitly_wait(3)
 
     def tearDown(self):
@@ -22,7 +22,7 @@ class AdminAddUserGroup(unittest.TestCase):
 
     def test_add_user_group(self):
         # Native django test client
-        self.browser.get(self.live_server_url + '/admin/')
+        self.browser.get(self.server_url + '/admin/')
         username_input = self.browser.find_element_by_name("username")
         username_input.send_keys('admin')
         password_input = self.browser.find_element_by_name("password")
@@ -34,7 +34,7 @@ class AdminAddUserGroup(unittest.TestCase):
 
         time.sleep(2)
 
-        self.browser.get(self.live_server_url + '/admin/auth/group/')
+        self.browser.get(self.server_url + '/admin/auth/group/')
         element = WebDriverWait(self.browser, 10).until(
             EC.presence_of_element_located((By.CLASS_NAME, "addlink"))
         )
@@ -56,3 +56,6 @@ class AdminAddUserGroup(unittest.TestCase):
         success_message = self.browser.find_element_by_class_name('success')
         self.assertIn(groupname, success_message.text)
 
+
+if __name__ == '__main__':
+    unittest.main(verbosity=2)
