@@ -39,5 +39,6 @@ class AdminAddUserGroup(unittest.TestCase):
             EC.presence_of_element_located((By.CLASS_NAME, "addlink"))
         )
 
+
 if __name__ == '__main__':
     unittest.main(verbosity=2)
