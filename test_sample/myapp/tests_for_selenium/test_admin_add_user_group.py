@@ -38,24 +38,6 @@ class AdminAddUserGroup(unittest.TestCase):
         element = WebDriverWait(self.browser, 10).until(
             EC.presence_of_element_located((By.CLASS_NAME, "addlink"))
         )
-        self.browser.find_element_by_class_name('addlink').click()
-        element = WebDriverWait(self.browser, 10).until(
-            EC.presence_of_element_located((By.NAME, "_save"))
-        )
-
-        time.sleep(2)
-        groupname = 'テストグループ１'
-        groupname_input = self.browser.find_element_by_id('id_name')
-        groupname_input.send_keys(groupname)
-        self.browser.find_element_by_name("_save").click()
-        element = WebDriverWait(self.browser, 10).until(
-            EC.presence_of_element_located((By.CLASS_NAME, "success"))
-        )
-
-        time.sleep(2)
-        success_message = self.browser.find_element_by_class_name('success')
-        self.assertIn(groupname, success_message.text)
-
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
