@@ -1,3 +1,5 @@
+import sys
+sys.path.append('..')
 import unittest
 
 from selenium import webdriver
@@ -35,6 +37,8 @@ class AdminLoginTest01(unittest.TestCase):
 
 
 class AdminLoginTest02(unittest.TestCase):
+    
+    live_server_url = "http://localhost:80"
 
     def setUp(self):
         self.browser = util.get_test_browser()
