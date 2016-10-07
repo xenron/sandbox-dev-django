@@ -9,7 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import selenium_util
 
 
-class PollsTest(unittest.TestCase):
+class BasicTest(unittest.TestCase):
     server_url = "http://localhost:80"
 
     def setUp(self):
